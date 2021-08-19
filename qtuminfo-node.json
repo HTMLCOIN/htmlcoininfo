@@ -14,7 +14,7 @@
   "servicesConfig": {
     "db": {
       "mysql": {
-        "uri": "mysql://qtum@localhost/qtum_mainnet"
+        "uri": "mysql://htmlcoin@localhost/htmlcoin_mainnet"
       },
       "rpc": {
         "protocol": "http",
