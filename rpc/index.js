@@ -14,7 +14,7 @@ const config = {logger: 'normal'}
 
 class RpcClient {
   #host = '127.0.0.1'
-  #port = 3889
+  #port = 4889
   #user = 'user'
   #password = 'password'
   #protocol = null
@@ -24,7 +24,7 @@ class RpcClient {
 
   constructor({
     host = '127.0.0.1',
-    port = 3889,
+    port = 4889,
     user = 'user',
     password = 'password',
     protocol = 'http',
@@ -60,11 +60,11 @@ class RpcClient {
         res.on('data', data => buffer.push(data))
         res.on('end', () => {
           if (res.statusCode === 401) {
-            reject(new Error(`Qtum JSON-RPC: Connection Rejected: 401 Unauthorized`))
+            reject(new Error(`Htmlcoin JSON-RPC: Connection Rejected: 401 Unauthorized`))
           } else if (res.statusCode === 403) {
-            reject(new Error(`Qtum JSON-RPC: Connection Rejected: 403 Forbidden`))
+            reject(new Error(`Htmlcoin JSON-RPC: Connection Rejected: 403 Forbidden`))
           } else if (res.statusCode === 500 && buffer === 'Work queue depth exceeded') {
-            let exceededError = new Error(`Qtum JSON-RPC: ${buffer}`)
+            let exceededError = new Error(`Htmlcoin JSON-RPC: ${buffer}`)
             exceededError.code = 429
             reject(exceededError)
           } else {
@@ -87,12 +87,12 @@ class RpcClient {
               this.#log.error(err.stack)
               this.#log.error(buffer)
               this.#log.error(`HTTP Status code: ${res.statusCode}`)
-              reject(new Error(`Qtum JSON-RPC: Error Parsing JSON: ${err.message}`))
+              reject(new Error(`Htmlcoin JSON-RPC: Error Parsing JSON: ${err.message}`))
             }
           }
         })
       })
-      req.on('error', err => reject(new Error(`Qtum JSON-RPC: Request Error: ${err.message}`)))
+      req.on('error', err => reject(new Error(`Htmlcoin JSON-RPC: Request Error: ${err.message}`)))
       req.setHeader('Content-Length', request.length)
       req.setHeader('Content-Type', 'application/json')
       req.setHeader('Authorization', `Basic ${auth}`)

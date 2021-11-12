@@ -1,7 +1,7 @@
 const path = require('path')
 const Node = require('../node')
 
-class QtumNode {
+class HtmlcoinNode {
   #path = null
   #config = null
   #node = null
@@ -20,11 +20,11 @@ class QtumNode {
     let services = await this.setupServices()
     this.#node = new Node({
       ...this.#config,
-      path: path.resolve(this.#path, 'qtuminfo-node.json'),
+      path: path.resolve(this.#path, 'htmlcoininfo-node.json'),
       services
     })
     this.registerExitHandlers()
-    this.#node.on('ready', () => this.logger.info('Qtuminfo Node ready.'))
+    this.#node.on('ready', () => this.logger.info('Htmlcoininfo Node ready.'))
     this.#node.on('error', err => this.logger.error(err))
     this.#node.start().catch(err => {
       this.logger.error('Failed to start services')
@@ -68,4 +68,4 @@ class QtumNode {
   }
 }
 
-module.exports = QtumNode
+module.exports = HtmlcoinNode

@@ -26,7 +26,7 @@ class DBService extends Service {
     this.#rpcOptions = Object.assign({
       protocol: 'http',
       host: 'localhost',
-      port: 3889,
+      port: 4889,
       user: 'user',
       password: 'password'
     }, options.rpc)
