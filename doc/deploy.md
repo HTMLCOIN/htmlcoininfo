@@ -12,7 +12,7 @@ htmlcoininfo is splitted into 3 repos:
 * redis v5.0+
 
 ## Deploy htmlcoin core
-1. `git clone --recursive https://github.com/htmlcoin/htmlcoin.git --branch=htmlcoininfo`
+1. `git clone --recursive https://github.com/htmlcoin/htmlcoin.git --branch=htmlinfo`
 2. Follow the instructions of [https://github.com/htmlcoin/htmlcoin/blob/master/README.md#building-htmlcoin-core](https://github.com/htmlcoin/htmlcoin/blob/master/README.md#building-htmlcoin-core) to build htmlcoin
 3. Run `htmlcoind` with `-logevents=1` enabled
 
