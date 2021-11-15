@@ -17,7 +17,7 @@ htmlcoininfo is splitted into 3 repos:
 3. Run `htmlcoind` with `-logevents=1` enabled
 
 ## Deploy htmlcoininfo
-1. `git clone https://github.com/htmlcoin/htmlcoininfo.git`
+1. `git clone https://github.com/denuoweb/htmlcoininfo.git`
 2. `cd htmlcoininfo && npm install`
 3. Create a mysql database and import [docs/structure.sql](structure.sql)
 4. Edit file `htmlcoininfo-node.json` and change the configurations if needed.
