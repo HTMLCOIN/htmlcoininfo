@@ -208,7 +208,7 @@ CREATE TABLE `tip` (
 
 CREATE TABLE `transaction` (
   `_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `id` binary(32) NULL,
+  `id` binary(32) NOT NULL,
   `hash` binary(32) NOT NULL,
   `version` int(11) NOT NULL,
   `flag` tinyint(3) unsigned NOT NULL,
