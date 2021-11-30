@@ -57,11 +57,11 @@ class HeaderService extends Service {
 
   _adjustTipBackToCheckpoint() {
     this.#originalHeight = this.#tip.height
-    if (this.#tip.height < 2000) {
+    if (this.#tip.height < 10000) {
       this.#tip.height = 0
       this.#tip.hash = this.#genesisHeader.hash
     } else {
-      this.#tip.height -= 2000
+      this.#tip.height -= 10000
     }
   }
 
